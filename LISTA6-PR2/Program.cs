@@ -86,6 +86,29 @@ namespace Lista6PR2
                     break;
                 case 3:
 
+                    float pesos, tpesos = 0;
+                    Console.WriteLine("Digite a quantidade de avaliaçoes que voce fará:");
+                    int quantavali = int.Parse(Console.ReadLine());
+
+                    for (int i = 1; i <= quantavali; i++)
+                    {
+                        Console.WriteLine("Digite os pesos das notas {i}:");
+                        pesos = float.Parse(Console.ReadLine());
+                        tpesos += pesos;
+                    }
+                    Console.WriteLine("a soma dos pesos é: " + tpesos);
+                    if (tpesos < 100)
+                        Console.WriteLine("Pesos insuficientes");
+
+                    else if (tpesos > 100)
+                        Console.WriteLine("superior a 100% alcansada");
+
+
+                    else
+                    {
+                        Console.WriteLine("porcentagem de 100% alcansada");
+                    }
+                    Console.ReadKey();
 
                     break;
                 case 4:
@@ -287,7 +310,7 @@ namespace Lista6PR2
                         case 9:
                             int iad;
                             Console.WriteLine("Qual dia de setembro?");
-                            iad= int.Parse(Console.ReadLine());
+                            iad = int.Parse(Console.ReadLine());
                             if (iad >= 23)
                             {
                                 Console.WriteLine("SETEMBRO-PRIMAVERA");
@@ -324,14 +347,46 @@ namespace Lista6PR2
 
                     break;
                 case 6:
+                    float peso, altura, imc;
+                    Console.WriteLine("diga sua altura:");
+                    altura = float.Parse(Console.ReadLine());
+                    Console.WriteLine("diga o seu peso:");
+                    peso = float.Parse(Console.ReadLine());
+                    imc = peso / (altura * altura);
 
+                    if (imc < 18.5)
+                        Console.WriteLine("esta abaixo do peso");
+                    else if (imc > 18.5 && imc < 34.90)
+                        Console.WriteLine("Peso normal");
+                    else if (imc > 25.0 && imc < 29.9)
+                        Console.WriteLine("Sobrepeso");
+                    else if (imc > 30.0 && imc < 34.9)
+                        Console.WriteLine("obesidade grau 1");
+                    else if (imc > 35.0 && imc < 39.9)
+                        Console.WriteLine("obesidade de grau 2");
+                    else
+                        Console.WriteLine("Obesidade de grau 3(morbita)");
 
                     break;
                 case 7:
+                    int numero;
+                    Console.WriteLine("digite um numero maior que zero:");
+                    numero = int.Parse(Console.ReadLine());
+                    Console.WriteLine("Divisores de " + numero + ":");
+
+                    for (int i = 1; i <= numero; i++)
+                    {
+                        if (numero % i == 0)
+                        {
+                            Console.WriteLine(i);
+                        }
+                    }
 
 
                     break;
-
+                default:
+                    Console.WriteLine("não existe esse exrcicio");
+                    break;
             }
 
 
